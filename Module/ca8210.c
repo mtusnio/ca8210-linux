@@ -2348,7 +2348,6 @@ static int ca8210_xmit_sync(struct ieee802154_hw *hw, struct sk_buff *skb)
 	struct ca8210_priv *priv = hw->priv;
 	int status;
 
-    msleep(100);
 	dev_dbg(&priv->spi->dev, "calling ca8210_xmit_sync()\n");
 
 	status = ca8210_skb_tx(skb, priv->nextmsduhandle++, priv);
@@ -2379,7 +2378,6 @@ static int ca8210_xmit_async(struct ieee802154_hw *hw, struct sk_buff *skb)
 {
 	struct ca8210_priv *priv = hw->priv;
 
-    msleep(100);
 	dev_dbg(&priv->spi->dev, "calling ca8210_xmit_async()\n");
 
 	priv->tx_skb = skb;
